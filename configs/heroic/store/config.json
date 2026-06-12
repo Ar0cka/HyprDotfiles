@@ -1,0 +1,77 @@
+{
+	"userHome": "/home/arocka",
+	"language": "ru",
+	"settings": {
+		"analyticsOptIn": false,
+		"checkUpdatesInterval": 10,
+		"enableUpdates": false,
+		"addDesktopShortcuts": false,
+		"addStartMenuShortcuts": false,
+		"autoInstallDxvk": true,
+		"autoInstallVkd3d": true,
+		"autoInstallDxvkNvapi": true,
+		"addSteamShortcuts": false,
+		"preferSystemLibs": false,
+		"checkForUpdatesOnStartup": true,
+		"autoUpdateGames": false,
+		"customWinePaths": [],
+		"defaultInstallPath": "/home/arocka/Games/Heroic",
+		"libraryTopSection": "disabled",
+		"defaultSteamPath": "/home/arocka/.steam/steam",
+		"defaultWinePrefix": "/home/arocka/Games/Heroic/Prefixes",
+		"defaultWinePrefixDir": "/home/arocka/Games/Heroic/Prefixes",
+		"hideChangelogsOnStartup": false,
+		"language": "ru",
+		"maxWorkers": 0,
+		"minimizeOnLaunch": false,
+		"nvidiaPrime": false,
+		"enviromentOptions": [],
+		"wrapperOptions": [],
+		"showFps": false,
+		"useGameMode": true,
+		"wineCrossoverBottle": "Heroic",
+		"winePrefix": "/home/arocka/Games/Heroic/Prefixes/shared",
+		"wineVersion": {
+			"bin": "/home/arocka/.config/heroic/tools/proton/GE-Proton-latest/proton",
+			"name": "GE-Proton-latest",
+			"type": "proton"
+		},
+		"enableEsync": true,
+		"enableFsync": true,
+		"enableMsync": false,
+		"enableWineWayland": true,
+		"enableHDR": false,
+		"enableWoW64": false,
+		"eacRuntime": true,
+		"battlEyeRuntime": true,
+		"framelessWindow": false,
+		"beforeLaunchScriptPath": "",
+		"afterLaunchScriptPath": "",
+		"disableUMU": false,
+		"verboseLogs": true,
+		"downloadProtonToSteam": false,
+		"advertiseAvxForRosetta": false,
+		"noTrayIcon": false,
+		"showValveProton": false,
+		"steamGridDbApiKey": "",
+		"disableGOGPresence": false,
+		"exitToTray": true,
+		"showMangohud": true
+	},
+	"theme": "sweet",
+	"games": {
+		"recent": [
+			{
+				"appName": "mw5TV89E4znoKPjA589Nhw",
+				"title": "Kings Bounty Armored Princess"
+			}
+		]
+	},
+	"window-props": {
+		"x": 0,
+		"y": 0,
+		"width": 1900,
+		"height": 1018,
+		"maximized": true
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+
+    "modules-left": ["hyprland/workspaces", "custom/label"],
+    "modules-center": ["clock", "pulseaudio"],
+    "modules-right": ["tray"],
+
+    "custom/label": {
+        "format": "Welcom to night"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% ",
+        "format-muted": "muted ",
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "spacing": 8
+    }
+}
