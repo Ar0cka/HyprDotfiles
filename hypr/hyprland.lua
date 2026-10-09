@@ -1,0 +1,13 @@
+require("colors")
+require("monitors")
+require("autostart")
+require("env")
+require("look")
+require("animation")
+require("layout")
+require("input")
+require("window-rules")
+require("misc")
+
+-- Ваши биндинги (уже есть)
+require("bind")

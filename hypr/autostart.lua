@@ -1,0 +1,7 @@
+hl.on("hyprland.start", function () 
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("hyprpaper -c ~/.config/hypr/hyprpaper.conf")
+  hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+  hl.exec_cmd("waybar & hyprpaper")
+  hl.exec_cmd("sleep 2 && hyprctl reload")
+end)

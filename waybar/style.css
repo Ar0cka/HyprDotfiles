@@ -1,0 +1,67 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+/* Transparent bar */
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: #e5e5e5;
+}
+
+/* Base module style */
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#custom-label {
+    background: rgba(20, 20, 20, 0.75);
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin: 6px;
+}
+
+/* Label */
+#custom-label {
+    border: 2px solid #7a1fa2;
+    color: #b26ad9;
+    font-weight: bold;
+}
+
+/* Workspaces */
+#workspaces {
+    border: 2px solid #5b21b6;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: #888888;
+    border: none;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #9f67ff;
+}
+
+#workspaces button:hover {
+    color: #c084fc;
+}
+
+/* Clock */
+#clock {
+    border: 2px solid #8b1fa9;
+    color: #c65cff;
+}
+
+/* Audio */
+#pulseaudio {
+    border: 2px solid #a21caf;
+    color: #d946ef;
+}
+
+/* Tray */
+#tray {
+    border: 2px solid #701a75;
+}

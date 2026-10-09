@@ -1,0 +1,1 @@
+fastfetch --kitty-icat ~/Images/fastfetch.jpg
