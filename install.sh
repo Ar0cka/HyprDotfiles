@@ -71,6 +71,7 @@ sudo pacman -S --needed --noconfirm \
     git base-devel \
     sddm \
     hyprland \
+    firefox \
     kitty \
     rofi \
     waybar \
