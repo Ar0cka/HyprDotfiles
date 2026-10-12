@@ -127,7 +127,7 @@ elif [ "$gpu_choice" == "2" ]; then
     echo -e "${BLUE}Установка драйверов AMD...${NC}"
     # Для AMD Radeon RX 6600 (RDNA 2) используются открытые драйверы Mesa [citation:3]
     # lib32-* пакеты нужны для 32-битных приложений (Steam, Wine и т.д.)
-    sudo pacman -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau xf86-video-amdgpu
+    sudo pacman -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader libva-mesa-driver lib32-libva-mesa-driver xf86-video-amdgpu
     echo -e "${GREEN}Драйверы AMD установлены.${NC}"
 else
     echo -e "${RED}Неверный выбор. Установка драйверов пропущена.${NC}"
