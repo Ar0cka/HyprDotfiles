@@ -46,7 +46,8 @@ if [[ "$setup_reflector" =~ ^[Yy]$ ]]; then
     # --sort rate       - сортировка по скорости загрузки
     # --save            - сохранить результат в mirrorlist
     echo -e "${BLUE}Поиск и сортировка зеркал (может занять время)...${NC}"
-    sudo reflector --latest 20 --protocol https --age 12 --sort rate --save /etc/pacman.d/mirrorlist
+   sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+
 
     echo -e "${GREEN}Зеркала обновлены и отсортированы по скорости.${NC}"
 
