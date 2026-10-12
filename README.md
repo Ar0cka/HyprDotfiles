@@ -4,6 +4,24 @@ A set of configs and an installer script for **Hyprland** on a **clean Arch Linu
 
 The script installs Hyprland, SDDM, base applications, GPU drivers, and optionally yay, Zsh, Steam, Flatpak, and OBS — then copies the configs from this repository into `~/.config`.
 
+## 🇷🇺 For users in Russia
+
+If GitHub is blocked, download and activate the VPN script first:
+
+```bash
+curl -L -O https://raw.githubusercontent.com/Ar0cka/HyprDotfiles/master/vless.sh
+chmod +x vless.sh
+source vless.sh
+```
+
+> ⚠️ Use `source` instead of `./vless.sh` so that proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`) persist in the current shell session.
+
+> 💡 It's recommended to read the script before running:
+
+```bash
+less vless.sh
+```
+
 ## Installation
 
 ```bash
