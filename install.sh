@@ -226,24 +226,6 @@ else
     echo -e "Установка Zsh пропущена."
 fi
 
-# 6. Клонирование и запуск репозитория qylock
-# ------------------------------------------------------------------------------
-echo -e "${BLUE}=== Настройка темы SDDM (qylock) ===${NC}"
-mkdir -p "$REPO_DIR"
-cd "$REPO_DIR"
-
-if [ ! -d "qylock" ]; then
-    echo -e "Клонирование qylock..."
-    git clone https://github.com/Darkkal44/qylock.git
-else
-    echo -e "Репозиторий qylock уже существует. Пропускаем клонирование."
-fi
-
-cd "$REPO_DIR/qylock"
-echo -e "Запуск скрипта установки темы SDDM..."
-# Ваш скрипт sddm.sh должен находиться в корне репозитория qylock
-chmod +x sddm.sh && ./sddm.sh
-
 # 7. Клонирование HyprDotfiles и перенос конфигов
 # ------------------------------------------------------------------------------
 echo -e "${BLUE}=== Настройка конфигураций Hyprland ===${NC}"
