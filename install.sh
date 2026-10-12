@@ -60,6 +60,26 @@ else
     echo -e "${YELLOW}Настройка зеркал пропущена. Используются зеркала по умолчанию.${NC}"
 fi
 
+# ==============================================================================
+# === Включение multilib (обязательно) ===
+# ==============================================================================
+echo -e "${YELLOW}=== Включение репозитория multilib ===${NC}"
+
+if grep -q "^#\[multilib\]" /etc/pacman.conf; then
+    # Раскомментируем секцию [multilib] и следующую за ней строку Include
+    sudo sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' /etc/pacman.conf
+    echo -e "${GREEN}multilib включён.${NC}"
+elif grep -q "^\[multilib\]" /etc/pacman.conf; then
+    echo -e "multilib уже включён, пропускаем."
+else
+    echo -e "${RED}Не удалось найти секцию [multilib] в /etc/pacman.conf${NC}"
+    echo -e "${YELLOW}Проверьте файл вручную и раскомментируйте секцию multilib.${NC}"
+fi
+
+# Обновляем базы данных после включения multilib
+echo -e "Обновление баз данных pacman..."
+sudo pacman -Syy
+
 # 1. Установка компонентов
 # ------------------------------------------------------------------------------
 # Флаг --needed предотвращает переустановку уже имеющихся пакетов.
@@ -107,7 +127,7 @@ elif [ "$gpu_choice" == "2" ]; then
     echo -e "${BLUE}Установка драйверов AMD...${NC}"
     # Для AMD Radeon RX 6600 (RDNA 2) используются открытые драйверы Mesa [citation:3]
     # lib32-* пакеты нужны для 32-битных приложений (Steam, Wine и т.д.)
-    sudo pacman -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
+    sudo pacman -S --needed --noconfirm mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau xf86-video-amdgpu
     echo -e "${GREEN}Драйверы AMD установлены.${NC}"
 else
     echo -e "${RED}Неверный выбор. Установка драйверов пропущена.${NC}"
@@ -268,35 +288,15 @@ else
     echo -e "${YELLOW}Папка Images не найдена в репозитории HyprDotfiles. Пропускаем.${NC}"
 fi
 
-# ==============================================================================
-# === Опциональное включение multilib и установка Steam ===
-# ==============================================================================
-echo -e "${YELLOW}=== Steam и репозиторий multilib ===${NC}"
 
-read -p "Хотите включить репозиторий multilib и установить Steam? (y/n): " install_steam
+# ==============================================================================
+# === Опциональная установка Steam ===
+# ==============================================================================
+echo -e "${YELLOW}=== Steam ===${NC}"
+
+read -p "Хотите установить Steam? (y/n): " install_steam
 
 if [[ "$install_steam" =~ ^[Yy]$ ]]; then
-    # --- Включение multilib ---
-    echo -e "${BLUE}Включение репозитория multilib...${NC}"
-
-    # Проверяем, включён ли multilib уже (нет ли # перед [multilib])
-    if grep -q "^#\[multilib\]" /etc/pacman.conf; then
-        # Раскомментируем секцию [multilib] и следующую за ней строку Include
-        # Используем sed: ищем [multilib], убираем #, и следующую строку с Include
-        sudo sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' /etc/pacman.conf
-        echo -e "${GREEN}multilib включён.${NC}"
-    elif grep -q "^\[multilib\]" /etc/pacman.conf; then
-        echo -e "multilib уже включён, пропускаем."
-    else
-        echo -e "${RED}Не удалось найти секцию [multilib] в /etc/pacman.conf${NC}"
-        echo -e "${YELLOW}Проверьте файл вручную и раскомментируйте секцию multilib.${NC}"
-    fi
-
-    # Обновляем базы данных после включения multilib
-    echo -e "Обновление баз данных pacman..."
-    sudo pacman -Syy
-
-    # --- Установка Steam ---
     echo -e "${BLUE}Установка Steam...${NC}"
     # pacman сам запросит выбор драйвера при установке, если нужно
     sudo pacman -S --needed --noconfirm steam
