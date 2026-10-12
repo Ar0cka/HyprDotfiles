@@ -22,6 +22,16 @@ source vless.sh
 less vless.sh
 ```
 
+> **P.S.** If you force-killed Throne (or it crashed) while System Proxy was active, the proxy setting may remain stuck in your system after a reboot — pointing to `127.0.0.1:2080` with nothing listening, which breaks internet access.
+>
+> On Arch Linux, the simplest fix is to let Throne clean up after itself:
+>
+> 1. Launch Throne again.
+> 2. In the main window, **enable System Proxy** (if it's off).
+> 3. Then **disable it** — Throne will reset your system proxy settings.
+>
+> If Throne is already running, just toggle **System Proxy** off in the main window or via the tray menu. On normal exit, Throne removes the proxy setting automatically[citation:4][citation:7].
+
 ## Installation
 
 ```bash
