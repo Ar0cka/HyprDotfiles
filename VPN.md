@@ -28,9 +28,9 @@ yay -S throne
 Once Throne is installed, add the test subscription profile below. This VPN is intended for temporary testing only — do not rely on it long-term.
 
 Subscription link:
-text
-
+```text
 vless://bc5d82bf-5141-460b-8a36-7648c20050ef@realarasaka.arocka.site:443?alpn=h2%2Chttp%2F1.1&extra=%7B%22mode%22%3A%22packet-up%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&fp=firefox&host=realarasaka.arocka.site&mode=packet-up&path=%2Fx0YQob80yw&security=tls&type=xhttp&x_padding_bytes=100-1000#%F0%9F%87%AF%F0%9F%87%B5%20xhttp-test-tapka
+```
 
 How to import it into Throne:
 
