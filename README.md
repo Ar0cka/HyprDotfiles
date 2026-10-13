@@ -6,6 +6,8 @@ The script installs Hyprland, SDDM, base applications, GPU drivers, and optional
 
 ## 🇷🇺 For users in Russia [VPN.md](./VPN.md)
 
+## Zapret settings [Zapret.md](./Zapret.md)
+
 ## Installation
 
 ```bash
