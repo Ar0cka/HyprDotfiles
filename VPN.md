@@ -1,5 +1,10 @@
 ## 🇷🇺 For users in Russia
 
+Download throne from yay: 
+```bash
+yay -S throne bin
+```
+
 If GitHub is blocked, download and activate the VPN script first:
 
 ```bash
@@ -7,6 +12,8 @@ curl -L -O https://raw.githubusercontent.com/Ar0cka/HyprDotfiles/master/vless.sh
 chmod +x vless.sh
 source vless.sh
 ```
+
+> ⚠️ Require installed throne from yay
 
 > ⚠️ Use `source` instead of `./vless.sh` so that proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`) persist in the current shell session.
 
