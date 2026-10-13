@@ -1,3 +1,14 @@
+echo "Скачивание зависимостей"
+sudo pacman -S --needed --asdeps \
+    rustup gcc cmake pkgconf git \
+    wayland wayland-protocols libxkbcommon \
+    gtk4 gtk4-layer-shell \
+    vulkan-headers vulkan-icd-loader libglvnd \
+    ffmpeg libva pipewire \
+    qt6-base qt6-declarative qt6-wayland
+
+rustup default stable
+
 echo "Начало установки waywallen и open-wallpaper-engine"
 yay -S open-wallpaper-engine waywallen 
 
