@@ -22,14 +22,14 @@ source vless.sh
 less vless.sh
 ```
 
-## 🛠️ For advanced users (manual setup)
+🛠️ For advanced users (manual setup)
 
 If you're already an experienced user, you can install Hyprland, SDDM, and yay yourself (or run the installation script and stop at the zsh step), then install Throne via:
 bash
 
 yay -S throne
 
-## 📥 Adding the test VPN (temporary use only)
+📥 Adding the test VPN (temporary use only)
 
 Once Throne is installed, add the test subscription profile below. This VPN is intended for temporary testing only — do not rely on it long-term.
 
@@ -48,7 +48,7 @@ How to import it into Throne:
 
     Select the imported profile and connect.
 
-## 🔐 Running Throne with TUN mode
+🔐 Running Throne with TUN mode
 
 To enable TUN mode, Throne must be launched with elevated privileges and preserve your environment variables:
 bash
@@ -57,7 +57,7 @@ sudo -E throne
 
     ⚠️ The -E flag is important — it preserves your user environment when running as root, which is required for TUN mode to work correctly.
 
-## 🌐 About the vless.sh script
+🌐 About the vless.sh script
 
 The vless.sh script activates the VPN as a system proxy by exporting HTTP_PROXY, HTTPS_PROXY, http_proxy, and https_proxy environment variables pointing to Throne's local mixed port (127.0.0.1:2080).
 
