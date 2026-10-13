@@ -45,7 +45,7 @@ If `y`:
 
 If `n` — default mirrors are used.
 
-### 2. Install base components
+### 2. Install base components and turn on multilib
 
 Runs automatically via `pacman -S --needed`:
 
