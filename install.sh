@@ -41,7 +41,6 @@ if [[ "$setup_reflector" =~ ^[Yy]$ ]]; then
 
     # Выбираем лучшие зеркала:
     # --latest 20       - 20 самых свежих зеркал
-    # --protocol https  - только HTTPS (безопаснее)
     # --age 12          - только зеркала, синхронизированные за последние 12 часов
     # --sort rate       - сортировка по скорости загрузки
     # --save            - сохранить результат в mirrorlist
@@ -80,6 +79,17 @@ fi
 echo -e "Обновление баз данных pacman..."
 sudo pacman -Syy
 
+read -p "Хотите установить hyprpaper? (y/n): " setup_hyprpaper
+
+if [[ "$setup_hyprpaper" =~ ^[Yy]$ ]]; then
+    echo -e "${BLUE}Установка hyprpaper...${NC}"
+    sudo pacman -S --needed --noconfirm hyprpaper
+
+    echo -e "${GREEN}hyprpaper installed.${NC}"
+else
+    echo -e "${YELLOW}Установка hyprpaper пропущена. Можете воспользоваться скриптом waywallen.sh для установки обоев с поддержкой wallpaper_engine.${NC}"
+fi
+
 # 1. Установка компонентов
 # ------------------------------------------------------------------------------
 # Флаг --needed предотвращает переустановку уже имеющихся пакетов.
@@ -97,7 +107,6 @@ sudo pacman -S --needed --noconfirm \
     rofi \
     waybar \
     dolphin \
-    hyprpaper \
     pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
     xdg-desktop-portal-hyprland \
     discord \
