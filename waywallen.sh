@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Скачивание зависимостей"
 sudo pacman -S --needed --asdeps \
     rustup gcc cmake pkgconf git \

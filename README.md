@@ -8,6 +8,8 @@ The script installs Hyprland, SDDM, base applications, GPU drivers, and optional
 
 ## Zapret settings [Zapret.md](./Zapret.md)
 
+## Waywallen installation [Waywallen.md](./waywallen.md)
+
 ## Installation
 
 ```bash
@@ -166,6 +168,7 @@ After the reboot, SDDM shows the login screen where you select the **Hyprland** 
 HyprDotfiles/
 ├── install.sh       # installer script\
 ├── vless.sh         # installer vpn (need throne from yay)
+├── waywallen.sh         # installer vpn (need throne from yay)
 ├── hypr/            # Hyprland configs → ~/.config/hypr/
 ├── kitty/           # Kitty configs → ~/.config/kitty/
 ├── rofi/            # Rofi configs → ~/.config/rofi/
@@ -174,6 +177,7 @@ HyprDotfiles/
 ├── zapret-discord-youtube.conf    # My config for zapret (use for router in OpenWRT)
 └── README.md
 └── VPN.md
+└── waywallen.md
 ```
 
 > ℹ️ If any of these folders is missing from the repository, the corresponding copy step is simply skipped.
