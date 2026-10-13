@@ -30,7 +30,7 @@ if command -v throne &> /dev/null; then
     echo "Запуск Throne..."
     throne "$VLESS_URL"
 else
-    echo "Ошибка: команда 'throne' не найдена."
+    echo "Ошибка: команда 'throne' не найдена. Если он не установлен, установите через yay -S throne-bin"
     echo "Укажите полный путь к исполняемому файлу, например: /opt/Throne/Throne"
     echo "Или добавьте директорию Throne в переменную PATH."
     exit 1

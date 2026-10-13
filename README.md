@@ -111,19 +111,7 @@ If `y`:
 
 > ⚠️ Your existing `~/.zshrc` will be overwritten. Save your aliases beforehand.
 
-> 💡 After installation, run `chsh -s $(which zsh)` and re-login to make Zsh your default shell.
-
-### 7. Install the SDDM theme (qylock)
-
-Clones `https://github.com/Darkkal44/qylock.git` into `~/repositor/qylock` and runs `sddm.sh` from there:
-
-```bash
-chmod +x sddm.sh && ./sddm.sh
-```
-
-If the repo is already cloned, it won't be cloned again.
-
-### 8. Clone configs and deploy to `~/.config`
+### 7. Clone configs and deploy to `~/.config`
 
 Clones this repository into `~/repositor/HyprDotfiles` (if not already there) and copies:
 
@@ -137,16 +125,15 @@ Clones this repository into `~/repositor/HyprDotfiles` (if not already there) an
 
 Copy uses `rsync -a --delete` (full replace). If `rsync` isn't available, `cp -r` is used (old files are not removed).
 
-### 9. Enable multilib and install Steam (optional)
+### 8. Enable multilib and install Steam (optional)
 
-Asks: **"Хотите включить репозиторий multilib и установить Steam? (y/n)"**
+Asks: **"Установить Steam? (y/n)"**
 
 If `y`:
-- uncomments the `[multilib]` section in `/etc/pacman.conf` (if still commented);
 - refreshes databases (`pacman -Syy`);
 - installs `steam`.
 
-### 10. Install Flatpak (optional)
+### 9. Install Flatpak (optional)
 
 Asks: **"Хотите установить Flatpak (для приложений из Flathub)? (y/n)"**
 
@@ -154,7 +141,7 @@ If `y`:
 - installs `flatpak`;
 - adds the Flathub remote system-wide (`--if-not-exists`).
 
-### 11. Install OBS Studio from Flathub (optional)
+### 10. Install OBS Studio from Flathub (optional)
 
 If Flatpak is installed, asks: **"Хотите установить OBS Studio из Flathub? (y/n)"**
 
@@ -162,7 +149,7 @@ If `y` — installs `com.obsproject.Studio` from Flathub.
 
 > 💡 On Hyprland, use the **Screen Capture (PipeWire)** source in OBS for screen capture.
 
-### 12. Reboot
+### 11. Reboot
 
 Asks: **"Перезагрузить систему сейчас? (y/n)"**
 
@@ -175,13 +162,16 @@ After the reboot, SDDM shows the login screen where you select the **Hyprland** 
 
 ```
 HyprDotfiles/
-├── install.sh       # installer script
+├── install.sh       # installer script\
+├── vless.sh         # installer vpn (need throne from yay)
 ├── hypr/            # Hyprland configs → ~/.config/hypr/
 ├── kitty/           # Kitty configs → ~/.config/kitty/
 ├── rofi/            # Rofi configs → ~/.config/rofi/
 ├── waybar/          # Waybar configs → ~/.config/waybar/
 ├── Images/          # wallpapers and images → ~/Images/
+├── zapret-discord-youtube.conf    # My config for zapret (use for router in OpenWRT)
 └── README.md
+└── VPN.md
 ```
 
 > ℹ️ If any of these folders is missing from the repository, the corresponding copy step is simply skipped.
