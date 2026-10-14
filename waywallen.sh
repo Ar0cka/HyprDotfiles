@@ -15,7 +15,7 @@ echo "Начало установки waywallen и open-wallpaper-engine"
 yay -S open-wallpaper-engine waywallen 
 
 echo "начало установки waywallen-display"
-git clone https://github.com/waywallen/waywallen-display.git
+git clone --depth 1 https://github.com/waywallen/waywallen-display.git   
 cd waywallen-display  
 
 echo "сборка waywallen-display"
