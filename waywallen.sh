@@ -29,3 +29,5 @@ sudo cp target/release/waywallen-layer-shell /usr/bin/
 
 echo "Установка прошла успешно. \n Перед запуском, убедитесь что у вас скачена официальная приложение Wallpaper Engine из стим"
 echo "Чтобы скачивать новые обои, запускайте Wallpaper Engine и подписывайтесь на обои, после в Waywallen ставьте их к себе на рабочий стол"
+echo "Не забудь добавить в свой конфиг Hyprland:"
+echo 'hl.exec_cmd("waywallen")'
