@@ -106,6 +106,7 @@ sudo pacman -S --needed --noconfirm \
     firefox \
     kitty \
     rofi \
+    mpvpaper \
     matugen \
     quickshell \
     dolphin \

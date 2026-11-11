@@ -203,16 +203,6 @@ log "spicetify apply"
 "$CMD_SPICETIFY" apply
 log "spicetify finished (exit code $?)"
 
-#notify-test
-notify-send -u low "Test Low" "This is a low urgency notification"
-
-# Обычная срочность (стандартный фон)
-notify-send "Test Normal" "This is a normal urgency notification"
-
-# Критическая срочность (обычно яркий/красный фон, не исчезает сам)
-notify-send -u critical "Test Critical" "This is a critical urgency notification"
-
-log "done"
 echo "Matugen configuration updated."
 echo "Wallpaper setup completed."
 shopt -u nocasematch
