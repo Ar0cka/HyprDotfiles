@@ -1,0 +1,7 @@
+@define-color primary {{colors.primary.light.hex}};
+@define-color primary-container {{colors.primary_container.dark.hex}};
+@define-color back {{colors.background.dark.hex}};
+@define-color surface {{colors.surface_container.dark.hex}};
+@define-color on-surface {{colors.on_surface.dark.hex}};
+@define-color text {{colors.on_surface.dark.hex}};
+@define-color accent {{colors.tertiary.dark.hex}};

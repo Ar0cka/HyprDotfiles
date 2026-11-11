@@ -1,18 +1,18 @@
 -- Оформление: закругления, тени, размытие, прозрачность
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/
 
-local colors = require("colors")
+local colors = require("matugen-colors")
 
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 5,
 
         border_size = 2,
 
         col = {
-            active_border   = colors.border.active,
-            inactive_border = colors.border.inactive,
+            active_border   = colors.colors.primary,
+            inactive_border = colors.colors.primary_container,
         },
 
         resize_on_border = false,
@@ -24,14 +24,14 @@ hl.config({
         rounding       = 10,
         rounding_power = 2,
 
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        active_opacity   = 0.97,
+        inactive_opacity = 0.90,
 
         shadow = {
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = colors.colors.shadow,
+            color        = colors.colors.background,
         },
 
         blur = {

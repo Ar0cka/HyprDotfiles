@@ -5,7 +5,7 @@
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local browser = "firefox"
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "/home/arocka/.local/bin/strata"
 local menu        = "~/.config/rofi/launchers/type-6/launcher.sh"
 
 -- Screenshot
@@ -16,7 +16,12 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-
+hl.bind(mainMod .. " + right", hl.dsp.exec_cmd("playerctl -p spotify next"))
+hl.bind(mainMod .. " + left", hl.dsp.exec_cmd("playerctl -p spotify previous"))
+hl.bind(mainMod .. " + J", hl.dsp.exec_cmd("playerctl -p spotify play-pause"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme /home/arocka/.config/rofi/launchers/type-6/dmenu_theme.rasi | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs ipc call picker toogle"))
+hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("dunstctl set-paused toggle"))
 -- Close
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
@@ -33,13 +38,16 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+-- -- Scroll through existing workspaces with mainMod + scroll
+-- hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+-- hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("move +col"))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("move -col"))
 
 hl.bind(mainMod .. " + period", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + comma", hl.dsp.layout("move -col"))

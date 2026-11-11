@@ -4,12 +4,6 @@ A set of configs and an installer script for **Hyprland** on a **clean Arch Linu
 
 The script installs Hyprland, SDDM, base applications, GPU drivers, and optionally yay, Zsh, Steam, Flatpak, and OBS — then copies the configs from this repository into `~/.config`.
 
-## 🇷🇺 For users in Russia [VPN.md](./VPN/VPN.md)
-
-## Zapret settings [Zapret.md](./Zapret/Zapret.md)
-
-## Waywallen installation [Waywallen.md](./Waywallen/waywallen.md)
-
 ## Installation
 
 ```bash

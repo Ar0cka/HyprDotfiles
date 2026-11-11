@@ -15,6 +15,12 @@ hl.config({
     },
 })
 
+hl.config({
+    render = {
+        cm_auto_hdr = 0
+    }
+})
+
 -- Scrolling Layout
 hl.config({
     scrolling = {

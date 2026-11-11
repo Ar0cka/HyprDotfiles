@@ -1,0 +1,17 @@
+name = "matugen theme"
+
+background = "{{colors.background.dark.hex}}"
+surface = "{{colors.surface_container.dark.hex}}"
+text = "{{colors.on_background.dark.hex}}"
+accent = "{{colors.primary.dark.hex}}"
+danger = "{{colors.error.dark.hex}}"
+muted = "{{colors.surface_container_high.dark.hex}}"
+highlight = "{{colors.primary_container.dark.hex}}"
+border = "{{colors.outline.dark.hex}}"
+dim_text = "{{colors.on_surface_variant.dark.hex}}"
+
+syntax_keyword = "{{colors.tertiary.dark.hex}}"
+syntax_string = "{{colors.secondary.dark.hex}}"
+syntax_constant = "{{colors.on_surface.dark.hex}}"
+syntax_type = "{{colors.tertiary_fixed.dark.hex}}"
+syntax_preprocessor = "{{colors.secondary_fixed.dark.hex}}"

@@ -18,6 +18,7 @@ NC='\033[0m' # No Color
 REPO_DIR="$HOME/repositor"
 DOTFILES_DIR="$REPO_DIR/HyprDotfiles"
 USER_HOME="$HOME"
+YAY_INSTALLED=0
 
 echo -e "${BLUE}=== Начало установки компонентов ===${NC}"
 
@@ -105,7 +106,8 @@ sudo pacman -S --needed --noconfirm \
     firefox \
     kitty \
     rofi \
-    waybar \
+    matugen \
+    quickshell \
     dolphin \
     pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
     xdg-desktop-portal-hyprland \
@@ -163,6 +165,7 @@ if [[ "$install_yay" =~ ^[Yy]$ ]]; then
     cd /
     rm -rf /tmp/yay
     echo -e "${GREEN}yay установлен.${NC}"
+    YAY_INSTALLED=1
 else
     echo -e "Установка yay пропущена."
 fi
@@ -174,43 +177,43 @@ read -p "Хотите установить Zsh и Oh My Zsh? (y/n): " install_zs
 if [[ "$install_zsh" =~ ^[Yy]$ ]]; then
     echo -e "${BLUE}Установка Zsh...${NC}"
     sudo pacman -S --needed --noconfirm zsh
-    
+
     echo -e "${BLUE}Установка Oh My Zsh...${NC}"
     # Официальный установщик Oh My Zsh [citation:6]
     # Флаг --unattended предотвращает запрос на смену оболочки по умолчанию во время установки.
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    
+
     echo -e "${GREEN}Zsh и Oh My Zsh установлены.${NC}"
     echo -e "${YELLOW}Не забудьте выполнить 'chsh -s $(which zsh)' и перелогиниться, чтобы Zsh стал оболочкой по умолчанию.${NC}"
 
         # --- Докачиваем кастомные плагины для Oh My Zsh ---
     echo -e "${BLUE}Установка кастомных плагинов для Zsh...${NC}"
-    
+
     # Определяем путь к кастомным плагинам (по умолчанию ~/.oh-my-zsh/custom/plugins)
     ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
     PLUGINS_DIR="$ZSH_CUSTOM/plugins"
-    
+
     mkdir -p "$PLUGINS_DIR"
-    
+
     # 1. zsh-autosuggestions (подсказки команд)
     if [ ! -d "$PLUGINS_DIR/zsh-autosuggestions" ]; then
         git clone https://github.com/zsh-users/zsh-autosuggestions.git "$PLUGINS_DIR/zsh-autosuggestions"
     else
         echo "zsh-autosuggestions уже установлен."
     fi
-    
+
     # 2. zsh-syntax-highlighting (подсветка синтаксиса)
     if [ ! -d "$PLUGINS_DIR/zsh-syntax-highlighting" ]; then
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$PLUGINS_DIR/zsh-syntax-highlighting"
     else
         echo "zsh-syntax-highlighting уже установлен."
     fi
-    
+
     echo -e "${GREEN}Плагины установлены.${NC}"
-    
+
     # --- Записываем твой конфиг в ~/.zshrc ---
     echo -e "${BLUE}Настройка ~/.zshrc...${NC}"
-    
+
     # Создаём или перезаписываем .zshrc с твоим конфигом
     cat > "$HOME/.zshrc" << 'EOF'
 export ZSH="$HOME/.oh-my-zsh"
@@ -230,7 +233,7 @@ source $ZSH/oh-my-zsh.sh
 EOF
 
     chsh -s $(which zsh)
-    
+
     echo -e "${GREEN}~/.zshrc настроен.${NC}"
 
 else
@@ -262,6 +265,8 @@ if ! command -v rsync &> /dev/null; then
     cp -r "$DOTFILES_DIR/kitty" "$USER_HOME/.config/"
     cp -r "$DOTFILES_DIR/rofi" "$USER_HOME/.config/"
     cp -r "$DOTFILES_DIR/waybar" "$USER_HOME/.config/"
+    cp -r "$DOTFILES_DIR/matugen" "$USER_HOME/.config/"
+    cp -r "$DOTFILES_DIR/quickshell" "$USER_HOME/.config/"
 else
     echo -e "Синхронизация конфигурационных папок в ~/.config..."
     mkdir -p "$USER_HOME/.config"
@@ -279,6 +284,36 @@ if [ -d "$DOTFILES_DIR/Images" ]; then
     echo -e "${GREEN}Папка Images скопирована.${NC}"
 else
     echo -e "${YELLOW}Папка Images не найдена в репозитории HyprDotfiles. Пропускаем.${NC}"
+fi
+
+# Перенос папки Wallpaper в домашнюю директорию пользователя
+# Используем переменную окружения $HOME, как и требовалось.
+echo -e "Копирование папки Wallpapers в $USER_HOME..."
+if [ -d "$DOTFILES_DIR/Wallpapers" ]; then
+    cp -r "$DOTFILES_DIR/Wallpapers" "$USER_HOME/"
+    echo -e "${GREEN}Папка Wallpapers скопирована.${NC}"
+else
+    echo -e "${YELLOW}Папка Wallpapers не найдена в репозитории HyprDotfiles. Пропускаем.${NC}"
+fi
+
+# Перенос папки Scripts в домашнюю директорию пользователя
+# Используем переменную окружения $HOME, как и требовалось.
+echo -e "Копирование папки Scripts в $USER_HOME..."
+if [ -d "$DOTFILES_DIR/Scripts" ]; then
+    cp -r "$DOTFILES_DIR/Scripts" "$USER_HOME/"
+    echo -e "${GREEN}Папка Scripts скопирована.${NC}"
+else
+    echo -e "${YELLOW}Папка Scripts не найдена в репозитории HyprDotfiles. Пропускаем.${NC}"
+fi
+
+# Перенос папки Scripts в домашнюю директорию пользователя
+# Используем переменную окружения $HOME, как и требовалось.
+echo -e "Копирование папки Scripts в $USER_HOME..."
+if [ -d "$DOTFILES_DIR/Scripts" ]; then
+    cp -r "$DOTFILES_DIR/Scripts" "$USER_HOME/"
+    echo -e "${GREEN}Папка Scripts скопирована.${NC}"
+else
+    echo -e "${YELLOW}Папка Scripts не найдена в репозитории HyprDotfiles. Пропускаем.${NC}"
 fi
 
 
@@ -321,29 +356,6 @@ else
     echo -e "${YELLOW}Установка Flatpak пропущена.${NC}"
 fi
 
-# ==============================================================================
-# === Опциональная установка OBS Studio из Flathub ===
-# ==============================================================================
-echo -e "${YELLOW}=== OBS Studio ===${NC}"
-
-# Проверяем, установлен ли вообще Flatpak (вдруг пользователь отказался от него)
-if ! command -v flatpak &> /dev/null; then
-    echo -e "${RED}Flatpak не установлен. Сначала выполните предыдущий шаг или установите Flatpak вручную.${NC}"
-else
-    read -p "Хотите установить OBS Studio из Flathub? (y/n): " install_obs
-
-    if [[ "$install_obs" =~ ^[Yy]$ ]]; then
-        echo -e "${BLUE}Установка OBS Studio...${NC}"
-        # Установка из Flathub. Флаг -y автоматически подтверждает установку.
-        flatpak install flathub com.obsproject.Studio -y
-
-        echo -e "${GREEN}OBS Studio установлен.${NC}"
-        echo -e "${YELLOW}Для запуска используйте: flatpak run com.obsproject.Studio${NC}"
-        echo -e "${YELLOW}В Hyprland для захвата экрана используйте источник PipeWire.${NC}"
-    else
-        echo -e "${YELLOW}Установка OBS Studio пропущена.${NC}"
-    fi
-fi
 
 echo -e "${GREEN}=====================================================${NC}"
 echo -e "${GREEN}=== Установка успешно завершена! ===${NC}"

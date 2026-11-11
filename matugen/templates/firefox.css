@@ -1,0 +1,30 @@
+/* =========================================
+   Основные переменные палитры (Dark Theme)
+   ========================================= */
+--background: {{colors.surface.dark.hex}};
+--surface: {{colors.surface_container.dark.hex}};
+--surface_container: {{colors.surface_container_high.dark.hex}};
+--primary: {{colors.primary.dark.hex}};
+--secondary: {{colors.secondary.dark.hex}};
+--on_background: {{colors.on_surface.dark.hex}};
+--on_surface: {{colors.on_surface.dark.hex}};
+
+/* =========================================
+   Браузерный шаблон (Firefox Chrome Elements)
+   ========================================= */
+/* Toolbar */
+--toolbar-bg: var(--surface);
+
+/* Active Tab */
+--tab-active-bg: var(--surface);
+--tab-active-line: var(--primary);
+
+/* URL Bar */
+--urlbar-bg: var(--surface_container);
+--urlbar-bg-focus: var(--surface);
+
+/* Menus & Popups */
+--menus-bg: var(--surface);
+
+/* Sidebar */
+--sidebar-bg: var(--surface);

@@ -45,4 +45,11 @@ hl.window_rule({
 --     monitor   = "DP-1",
 -- })
 
+hl.window_rule({
+    workspace = "3",
+    match = {
+        class = "^(Spotify)$"
+    }
+})
+
 hl.workspace_rule({ workspace = "2", layout_opts = { direction = "right" } })

@@ -1,0 +1,24 @@
+# Сгенерировано matugen — не редактируйте вручную
+
+[global]
+    frame_color = "{{colors.outline.dark.hex}}"
+    separator_color = "{{colors.outline_variant.dark.hex}}"
+    font = Monospace 10
+
+[urgency_low]
+    background = "{{colors.surface.dark.hex}}"
+    foreground = "{{colors.on_surface.dark.hex}}"
+    frame_color = "{{colors.outline.default.hex}}"
+    timeout = 10
+
+[urgency_normal]
+    background = "{{colors.surface_container.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    frame_color = "{{colors.primary.default.hex}}"
+    timeout = 10
+
+[urgency_critical]
+    background = "{{colors.error_container.default.hex}}"
+    foreground = "{{colors.on_error_container.default.hex}}"
+    frame_color = "{{colors.error.default.hex}}"
+    timeout = 0

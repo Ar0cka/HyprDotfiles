@@ -1,0 +1,8 @@
+* {
+    background: {{colors.primary_container.dark.hex}}ff;
+    background-alt: {{colors.primary_container.dark.hex}}ff;
+    foreground: {{colors.outline.dark.hex}}ff;
+    selected: {{colors.surface.dark.hex}}ff;
+    active: {{colors.tertiary.dark.hex}}ff;
+    urgent: {{colors.error.dark.hex}}ff;
+}

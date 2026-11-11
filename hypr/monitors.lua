@@ -3,7 +3,7 @@
 
 hl.monitor({
     output   = "",              -- Оставьте пустым для автовыбора
-    mode     = "preferred",     -- "preferred", "1920x1080@60" и т.д.
+    mode     = "1920x1080@144",     -- "preferred", "1920x1080@60" и т.д.
     position = "auto",          -- "auto" или "x,y"
     scale    = "auto",          -- "auto" или число (1, 1.5, 2)
 })

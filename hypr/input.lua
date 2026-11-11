@@ -17,6 +17,10 @@ hl.config({
             natural_scroll = false,
         },
     },
+
+      cursor = {
+        no_hardware_cursors = false,        -- false = включить аппаратное ускорение
+    },
 })
 
 -- Жесты на тачпаде (3 пальца = переключение рабочего стола)

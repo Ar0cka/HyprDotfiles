@@ -1,0 +1,44 @@
+[config]
+caching = true
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/matugen-theme.conf"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "pkill -SIGUSR2 waybar" # Перезапускает waybar "на лету"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland.lua"
+output_path = "~/.config/hypr/matugen-colors.lua" # Проверьте, чтобы путь вел в вашу lua-папку
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi.rasi"
+output_path = "~/.config/rofi/launchers/type-6/matugen-colors.rasi"
+
+[templates.strata]
+input_path = "~/.config/matugen/templates/strata.toml"
+output_path = "~/.config/strata/themes/matugen-theme.toml"
+
+[templates.spotify]
+input_path = "~/.config/matugen/templates/spotify.css"
+output_path = "~/.config/spicetify/Themes/MatugenTheme/user.css"
+
+[templates.firefox]
+input_path = "~/.config/matugen/templates/firefox.css"
+output_path = "~/Dotfiles/firefox_generated.css"
+
+[templates.quickshell]
+input_path = "~/.config/matugen/templates/wallpaper_picker.qml"
+output_path = "/home/arocka/.config/quickshell/wallpaper_picker_ui/Theme.qml"
+
+[templates.topbar]
+input_path = "~/.config/matugen/templates/wallpaper_picker.qml"
+output_path = "/home/arocka/.config/quickshell/waybar_qml/Theme.qml"
+
+[templates.dunst]
+input_path = '~/.config/matugen/templates/dunstrc-colors'
+output_path = '~/.config/dunst/dunstrc'
+post_hook = 'dunstctl reload'
